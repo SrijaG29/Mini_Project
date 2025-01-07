@@ -1,0 +1,62 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    height: 20%;
+    display: flex;
+    border-bottom: 2px solid black;
+    /* padding: 1%; */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#image{
+    height: 50px;
+    width: 100px;
+    border-radius: 5%;
+    padding-right: 2%;
+
+}
+
+.heading{
+    margin: 0;
+    padding-bottom: 1%;
+}
+
+.expensesForm{
+    height: 30%;
+    padding: 1%;
+    border-bottom: 2px solid black;
+}
+
+.formElements{
+    display: flex;
+    justify-content: space-between;
+}
+.select{
+    display: flex;
+    /* justify-content: center; */
+}
+
+#otherinput{
+    height: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: light-dark(rgb(118, 118, 118)),
+}
+
+.additionalDetails{
+    display: flex;
+}
+
+.filtering{
+    width: 50%;
+    border-right: 2px solid black;
+}
+
+.categoryWiseExpenses{
+    width: 50%;
+    border-right: 2px solid black;
+}
