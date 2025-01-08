@@ -1,6 +1,8 @@
 body{
     display: flex;
     flex-direction: column;
+    background-color: rgb(205, 231, 234);
+    margin: 0;
 }
 
 .navbar{
@@ -10,13 +12,15 @@ body{
     /* padding: 1%; */
     justify-content: flex-start;
     align-items: center;
+    background-color: rgb(6, 55, 70);
+    color: azure;
 }
 
 #image{
     height: 50px;
     width: 100px;
-    border-radius: 5%;
-    padding-right: 2%;
+    border-radius: 20%;
+    padding: 0 2%;
 
 }
 
@@ -38,10 +42,11 @@ body{
 .select{
     display: flex;
     /* justify-content: center; */
+    /* justify-content: space-between; */
 }
 
+
 #otherinput{
-    height: 5px;
     border-width: 1px;
     border-style: solid;
     border-color: light-dark(rgb(118, 118, 118)),
@@ -51,12 +56,29 @@ body{
     display: flex;
 }
 
-.filtering{
-    width: 50%;
-    border-right: 2px solid black;
+.firstpart{
+    width: 50%
 }
 
-.categoryWiseExpenses{
-    width: 50%;
+.filtering{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    /* width: 50%; */
     border-right: 2px solid black;
+    align-items: center;
+}
+
+.values{
+    justify-items: center;
+}
+
+#filteroptions{
+    width: 40%;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.secondpart{
+    width: 50%;
 }

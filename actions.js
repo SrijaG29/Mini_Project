@@ -1,7 +1,7 @@
 // This is to take only aphabelts in expensename element
 let expenseNameInput = document.getElementById("expenseName");
 expenseNameInput.addEventListener("input", function(event) {
-            // Remove any non-alphabet characters
+    // Remove any non-alphabet characters
     event.target.value = event.target.value.replace(/[^A-Za-z ]+/g, '');
 });
 
@@ -19,7 +19,8 @@ options.onchange = () => {
         newlabel.textContent = "Other Category:";
         container.appendChild(newlabel);
         // Create and append a textarea
-        newele = document.createElement("textarea");
+        let newele = document.createElement("input");
+        newele.type = "text";
         newele.setAttribute("id","otherinput")
         // This is to take only aphabelts in otherinput textarea element
         container.addEventListener("input", function(event) {
@@ -30,24 +31,61 @@ options.onchange = () => {
     }
 };
 
+let index = 0;
+let details = {}
 function getdetails(event){
-    // event.preventDefault()
+    event.preventDefault()
     let category
     if(document.getElementById("options").value === "Other"){
-        category = document.getElementById("otherInputContainer").querySelector("textarea").value
+        category = document.getElementById("otherinput").value
+        // adding new category into options for future selection in form
+        let optionselement = document.getElementById("options")
+        let categoryoption = document.createElement("option")
+        categoryoption.textContent = category
+        categoryoption.value = category
+        let optionExists = Array.from(optionselement.options).some(option => option.value === category);
+        if (!optionExists) {
+            // Insert the new option at the second-to-last position
+            optionselement.insertBefore(categoryoption,optionselement.lastElementChild)
+        }else {
+            // If the option already exists, just set the dropdown value to the existing option
+            optionselement.value = category;
+        }
+
+
+        // adding new category into options for future selection in filtering
+        let optionsfilteringelement = document.getElementById("filteroptions")
+        let categoryfilteringoption = document.createElement("option")
+        categoryfilteringoption.textContent = category
+        categoryfilteringoption.value = category
+        let filteringOptionExists = Array.from(optionsfilteringelement.options).some(option => option.value === category);
+        if (!filteringOptionExists) {
+            // Insert the new option at the second-to-last position
+            optionsfilteringelement.insertBefore(categoryfilteringoption,optionsfilteringelement.lastElementChild)
+        }else {
+            // If the option already exists, just set the dropdown value to the existing option
+            optionsfilteringelement.value = category;
+        }
     }
     else{
         category = document.getElementById("options").value
     }
-    console.log(category)
-    let details = {
+    // console.log(category)
+    let d = {
         expenseName: document.getElementById("expenseName").value,
         category: category,
         totalAmount: document.getElementById("totalAmount").value
     };
+    details[index] = d;
+    index = index + 1;
     console.log(details)
-    localStorage.setItem("detail", JSON.stringify(details));
+    // expensedetails()
 }
+
+
+
+
+
 
 
 
