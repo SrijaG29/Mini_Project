@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Expense Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     </div>
     <div class="expensesForm">
         <h3 class="heading">Expenses Form</h3>
-        <form class="formElements" onsubmit="getdetails(event)">
+        <form class="formElements" id="formid" onsubmit="getdetails(event)">
            <div class="select">
                 <label for="expenseName">Expense Name: </label>
                 <input type="text" id="expenseName" name="expenseName" required>
@@ -51,17 +51,16 @@
                 </select>
             </div>
             <div class="values">
-                <div class="totalsalary">
-                    <label for="totalsalary">Enter total salary:</label>
-                    <input type="number" id="totalsalary" name="totalsalary" required>
-                </div>
                 <div class="expensedetails">
-                    <tr>
-                        <td><b>Expenses</b></td>
-                        <td><b>Category</b></td>
-                        <td><b>Total Amount</b></td>
-                        <td><b>Remaining Salary</b></td>
-                    </tr>
+                    <table>
+                        <tr>
+                            <th><b>Expenses</b></th>
+                            <th><b>Category</b></th>
+                            <th><b>Total Amount</b></th>
+                            <!-- <th><b>Remaining Salary</b></th> -->
+                        </tr>
+                    </table>
+
                 </div>
             </div>
         </div>

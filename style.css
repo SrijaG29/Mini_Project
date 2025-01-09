@@ -3,6 +3,7 @@ body{
     flex-direction: column;
     background-color: rgb(205, 231, 234);
     margin: 0;
+    width: 100%;
 }
 
 .navbar{
@@ -54,6 +55,7 @@ body{
 
 .additionalDetails{
     display: flex;
+    width: 100%;
 }
 
 .firstpart{
@@ -71,6 +73,7 @@ body{
 
 .values{
     justify-items: center;
+    border-right: 2px solid black;
 }
 
 #filteroptions{
@@ -82,3 +85,19 @@ body{
 .secondpart{
     width: 50%;
 }
+
+.expensedetails{
+    padding:10px;
+}
+.expensedetails th{
+    border: 1px solid black; padding: 8px; text-align: left;
+}
+
+.expensedetails td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+
+

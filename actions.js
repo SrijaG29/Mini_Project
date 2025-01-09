@@ -6,6 +6,7 @@ expenseNameInput.addEventListener("input", function(event) {
 });
 
 
+
 let options = document.getElementById("options");
 let newele;
 let newlabel;
@@ -33,6 +34,7 @@ options.onchange = () => {
 
 let index = 0;
 let details = {}
+let table = document.querySelector(".expensedetails table");
 function getdetails(event){
     event.preventDefault()
     let category
@@ -78,9 +80,42 @@ function getdetails(event){
     };
     details[index] = d;
     index = index + 1;
-    console.log(details)
-    // expensedetails()
+    // console.log(details)
+    expensedetails(d.expenseName,d.category,d.totalAmount) //
 }
+
+function expensedetails(expenses, category, totalAmount){ //
+    // Create a new row directly inside the .expensedetails div (not inside <tbody>)
+    let newRow = document.createElement("tr"); // Create a new row element
+    let cell1 = document.createElement("td"); // Create the first cell
+    let cell2 = document.createElement("td"); // Create the second cell
+    let cell3 = document.createElement("td"); // Create the third cell
+
+    cell1.innerHTML = expenses; // Add the expense name to the first cell
+    cell2.innerHTML = category; // Add the category to the second cell
+    cell3.innerHTML = totalAmount; // Add the total amount to the third cell
+
+    // Append cells to the row
+    newRow.appendChild(cell1);
+    newRow.appendChild(cell2);
+    newRow.appendChild(cell3);
+
+    newRow.setAttribute("class","tablerows");
+    // Append the new row directly to the table (the div in your case)
+    table.appendChild(newRow);
+}
+
+let filtervalue = document.getElementById("filteroptions");
+filtervalue.onchange = () => {
+    // console.log(filtervalue.value);
+    let expensesvalues = document.querySelectorAll("tr.tablerows");
+    console.log(expensesvalues.innerText);
+    for (let i = 0; i < expensesvalues.length; i++) {
+        let temp = expensesvalues[0].innerText.split('\t');
+    }
+}
+
+
 
 
 
