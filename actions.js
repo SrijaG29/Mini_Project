@@ -23,6 +23,7 @@ options.onchange = () => {
         let newele = document.createElement("input");
         newele.type = "text";
         newele.setAttribute("id","otherinput")
+        newele.setAttribute("required",true);
         // This is to take only aphabelts in otherinput textarea element
         container.addEventListener("input", function(event) {
             // Remove any non-alphabet characters
@@ -105,18 +106,39 @@ function expensedetails(expenses, category, totalAmount){ //
     table.appendChild(newRow);
 }
 
+
 let filtervalue = document.getElementById("filteroptions");
 filtervalue.onchange = () => {
-    // console.log(filtervalue.value);
-    let expensesvalues = document.querySelectorAll("tr.tablerows");
-    console.log(expensesvalues.innerText);
-    for (let i = 0; i < expensesvalues.length; i++) {
-        let temp = expensesvalues[0].innerText.split('\t');
+    let rows = document.querySelectorAll("tr.tablerows");
+    for(let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        const categoryvalue = row.querySelector("td:nth-child(2)").textContent.trim();
+
+        if (filtervalue.value === "Select a Category") {
+            row.style.display = ""; // Reset display for all rows
+        } else if (categoryvalue === filtervalue.value) {
+            row.style.display = ""; // Show row if category matches
+        } else {
+            row.style.display = "none"; // Hide row if category doesn't match
+        }
+    }
+};
+
+
+function populateYearDropdown() {
+    let currentYear = new Date().getFullYear();
+    let startYear = 2000;
+    let yearDropdown = document.getElementById('yearDropdown');
+
+    for (let year = startYear; year <= currentYear; year++) {
+        let option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearDropdown.appendChild(option);
     }
 }
 
-
-
+document.addEventListener("DOMContentLoaded", populateYearDropdown);
 
 
 

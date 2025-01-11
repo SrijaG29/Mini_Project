@@ -7,10 +7,11 @@ body{
 }
 
 .navbar{
-    height: 20%;
+    /* height: 30%; */
     display: flex;
     border-bottom: 2px solid black;
-    /* padding: 1%; */
+    /* padding-top: 2.5%;
+    padding-bottom: 2.5%; */
     justify-content: flex-start;
     align-items: center;
     background-color: rgb(6, 55, 70);
@@ -59,21 +60,23 @@ body{
 }
 
 .firstpart{
-    width: 50%
+    width: 50%;
+    border-right: 2px solid black;
 }
 
 .filtering{
     display: flex;
     justify-content: center;
-    padding: 5px;
-    /* width: 50%; */
-    border-right: 2px solid black;
+    padding-top: 5%;
+    height: 25%;
     align-items: center;
 }
 
 .values{
     justify-items: center;
-    border-right: 2px solid black;
+    height: 75%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 #filteroptions{
@@ -99,5 +102,63 @@ body{
     text-align: left;
 }
 
+#dropdowns{
+    display: flex;
+    padding-top: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    align-items: center;
+    height: 25%;
+}
+
+/*#monthDropdown{
+    width: 50%;
+}
+
+#yeardropdown{
+    display: flex;
+    text-align: center;
+    padding-top: 5%;
+    width: 50%;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+#yearDropdown{
+    width: 50%;
+}
+
+.textval{
+    padding-right: 2%;
+    width: 50%;
+}*/
+
+#monthwisecontent{
+    height: 75%;
+}
 
 
+/*
+<div id="monthdropdown">
+    <p class="textval">Select Month:</p>
+    <select id="monthDropdown">
+        <option value="MM">MM</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="Sepetember">Sepetember</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+</div>
+<div id="yeardropdown">
+    <p class="textval">Select Year:</p>
+    <select id="yearDropdown"></select>
+</div>
+*/
