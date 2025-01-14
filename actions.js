@@ -82,7 +82,8 @@ function getdetails(event){
     details[index] = d;
     index = index + 1;
     // console.log(details)
-    expensedetails(d.expenseName,d.category,d.totalAmount) //
+    expensedetails(d.expenseName,d.category,d.totalAmount)
+    monthwisecontent(d.category,d.totalAmount)
 }
 
 function expensedetails(expenses, category, totalAmount){ //
@@ -140,10 +141,30 @@ function populateYearDropdown() {
 
 document.addEventListener("DOMContentLoaded", populateYearDropdown);
 
+let categoryTotals = {};
 
+function monthwisecontent(categoryName,totalAmount) {
+    let monthWiseContentDetails = document.getElementById("monthwisecontent");
+    let listItems = monthWiseContentDetails.getElementsByTagName("li");
+    let found = false;
+    for(let li of listItems){
+        let [currentCategory, currentAmount] = li.textContent.split(": ₹");
 
+        if(currentCategory === categoryName){
+            currentAmount = currentAmount + totalAmount;
+            li.textContent = `${currentCategory}: ₹${currentAmount}`;
+            categoryTotals[categoryName] = currentAmount;
+            found=true;
+            break;
+        }
+    }
+    if(!found){
+        let li = document.createElement("li");
+        li.textContent = `${categoryName}: ₹${totalAmount}`;
+        monthWiseContentDetails.appendChild(li);
+        categoryTotals[category] = totalAmount;
+    }
 
-
-
+}
 
 
