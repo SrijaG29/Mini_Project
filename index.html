@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Calculator</title>
+    <link rel="stylesheet" href="styleMonitor.css">
+    <link rel="stylesheet" href="styleMobile.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqV8qU3m3W7cqHR9zkcdtry3bP-rQGybA-sw&s"
+        alt="Logo" id="image">
+        <h1 class="mainHeading">Expenses Calculator!</h1>
+    </div>
+    <div id="details">
+        <div class="expensesForm">
+            <h3 class="heading">Expenses Form</h3>
+            <form class="formElements" id="formid" onsubmit="getdetails(event)">
+               <div class="select">
+                    <label for="expenseName">Expense Name: </label>
+                    <input type="text" id="expenseName" name="expenseName" required>
+               </div>
+               <div class="select">
+                    <label for="options">Select a category:</label>
+                    <select id="options" >
+                        <option value="Select a Category">Select a Category</option>
+                        <option value="Dressing">Dressing</option>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="select" id="otherInputContainer"></div>
+                <div class="select">
+                    <label for="totalAmount">Total Amount: </label>
+                    <input type="number" id="totalAmount" name="totalAmount" required>
+                </div>
+                <div class="select">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="additionalDetails">
+            <div class="firstpart">
+                <div class="filtering">
+                    <p>Filtering options:</p>
+                    <select id="filteroptions" >
+                        <option value="Select a Category">Select a Category</option>
+                        <option value="Dressing">Dressing</option>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                    </select>
+                </div>
+                <div class="values">
+                    <div class="expensedetails">
+                        <table>
+                            <tr>
+                                <th><b>Expenses</b></th>
+                                <th><b>Category</b></th>
+                                <th><b>Total Amount</b></th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="secondpart">
+                    <div id="dropdowns">
+                        <div id="month">
+                            <label for="monthdropdowns">Select Month:</label>
+                            <select id="monthDropdown" required>
+                                <option value="Month" selected>Month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="Sepetember">Sepetember</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                        <div id="year">
+                            <label for="monthdropdowns">Select Year:</label>
+                            <select id="yearDropdown" required>
+                                <option value="YYYY" selected>YYYY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="monthwisecontent">
+                        <ul id="monthwisedetails">
+                            <li class="listItems"><b>Total Expense</b></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="actions.js"></script>
+</body>
+</html>
+
+
+
